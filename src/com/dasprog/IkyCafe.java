@@ -105,7 +105,7 @@ public class IkyCafe {
                 }
 
                 totalHarga += hargaMenu * jumlah;
-                detailPesanan.append(String.format("| %-20s %-10d Rp %,-15d", namaMenu, jumlah, hargaMenu * jumlah)).append("\n");
+                detailPesanan.append(String.format("| %-20s %-10d Rp.%,-15d", namaMenu, jumlah, hargaMenu * jumlah)).append("\n");
 
                 System.out.print("Apakah Anda Ingin Menambah Menu Lain? (y/n): ");
                 char tambah = input.next().charAt(0);
@@ -167,9 +167,9 @@ public class IkyCafe {
         System.out.println("| Pesanan    : ");
         System.out.println(detailPesanan.toString());
         System.out.println("| -------------------------------------------");
-        System.out.println(String.format("| %-12s: Rp %,-15d", "Total Bayar", totalHarga));
-        System.out.println(String.format("| %-12s: Rp %,-15d", "Uang Dibayar", uangDibayar));
-        System.out.println(String.format("| %-12s: Rp %,-15d", "Kembalian", kembalian));
+        System.out.println(String.format("| %-12s: Rp.%,-15d", "Total Bayar", totalHarga));
+        System.out.println(String.format("| %-12s: Rp.%,-15d", "Uang Dibayar", uangDibayar));
+        System.out.println(String.format("| %-12s: Rp.%,-15d", "Kembalian", kembalian));
         System.out.println("=============================================");
         System.out.println("Terima kasih Atas Kunjungan Anda Ke IkyCafe");
     }
