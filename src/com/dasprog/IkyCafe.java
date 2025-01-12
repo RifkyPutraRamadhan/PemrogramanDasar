@@ -70,6 +70,7 @@ public class IkyCafe {
                                 input.nextLine();
                             }
                         }
+                        
                     } else if (pilihan == 2) {
                         boolean validMinuman = false;
                         while (!validMinuman) {
