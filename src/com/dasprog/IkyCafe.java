@@ -39,69 +39,87 @@ public class IkyCafe {
                     System.out.print("Pilih kategori (1/2): ");
                     pilihan = input.nextInt();
 
-                    if (pilihan < 1 || pilihan > 2) {
+                    if (pilihan == 1) {
+                        boolean validMakanan = false;
+                        while (!validMakanan) {
+                            try {
+                                System.out.println("\n======== Menu Makanan ========");
+                                System.out.println("| 1. Nasi Goreng - Rp 20.000 |");
+                                System.out.println("| 2. Ayam Goreng - Rp 25.000 |");
+                                System.out.println("| 3. Mie Goreng - Rp 18.000  |");
+                                System.out.println("| 4. Bakso - Rp 15.000       |");
+                                System.out.println("| 5. Soto Ayam - Rp 19.000   |");
+                                System.out.println("==============================");
+                                System.out.print("Pilih makanan (1-5): ");
+                                pilihan = input.nextInt();
+
+                                if (pilihan >= 1 && pilihan <= 5) {
+                                    switch (pilihan) {
+                                        case 1 -> { namaMenu = "Nasi Goreng"; hargaMenu = 20000; }
+                                        case 2 -> { namaMenu = "Ayam Goreng"; hargaMenu = 25000; }
+                                        case 3 -> { namaMenu = "Mie Goreng"; hargaMenu = 18000; }
+                                        case 4 -> { namaMenu = "Bakso"; hargaMenu = 15000; }
+                                        case 5 -> { namaMenu = "Soto Ayam"; hargaMenu = 19000; }
+                                    }
+                                    validMakanan = true;
+                                } else {
+                                    System.out.println("Menu tidak valid! Pilih antara 1 sampai 5.");
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Input tidak valid! Masukkan angka.");
+                                input.nextLine();
+                            }
+                        }
+                    } else if (pilihan == 2) {
+                        boolean validMinuman = false;
+                        while (!validMinuman) {
+                            try {
+                                System.out.println("\n======== Menu Minuman ========");
+                                System.out.println("| 1. Teh - Rp 5.000          |");
+                                System.out.println("| 2. Kopi - Rp 10.000        |");
+                                System.out.println("| 3. Jus - Rp 15.000         |");
+                                System.out.println("| 4. Susu - Rp 14.000        |");
+                                System.out.println("| 5. Air Mineral - Rp 5.000  |");
+                                System.out.println("==============================");
+                                System.out.print("Pilih minuman (1-5): ");
+                                pilihan = input.nextInt();
+
+                                if (pilihan >= 1 && pilihan <= 5) {
+                                    switch (pilihan) {
+                                        case 1 -> { namaMenu = "Teh"; hargaMenu = 5000; }
+                                        case 2 -> { namaMenu = "Kopi"; hargaMenu = 10000; }
+                                        case 3 -> { namaMenu = "Jus"; hargaMenu = 15000; }
+                                        case 4 -> { namaMenu = "Susu"; hargaMenu = 14000; }
+                                        case 5 -> { namaMenu = "Air Mineral"; hargaMenu = 5000; }
+                                    }
+                                    validMinuman = true;
+                                } else {
+                                    System.out.println("Menu tidak valid! Pilih antara 1 sampai 5.");
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Input tidak valid! Masukkan angka.");
+                                input.nextLine();
+                            }
+                        }
+                    } else {
                         System.out.println("Kategori tidak valid! Pilih antara 1 atau 2.");
                         continue;
                     }
 
-                    switch (pilihan) {
-                        case 1:
-                            System.out.println("\n======== Menu Makanan ========");
-                            System.out.println("| 1. Nasi Goreng - Rp 20.000 |");
-                            System.out.println("| 2. Ayam Goreng - Rp 25.000 |");
-                            System.out.println("| 3. Mie Goreng - Rp 18.000  |");
-                            System.out.println("| 4. Bakso - Rp 15.000       |");
-                            System.out.println("| 5. Soto Ayam - Rp 19.000   |");
-                            System.out.println("==============================");
-                            System.out.print("Pilih makanan (1-5): ");
-                            pilihan = input.nextInt();
-
-                            if (pilihan < 1 || pilihan > 5) {
-                                System.out.println("Menu tidak valid! Pilih antara 1 sampai 5.");
-                                continue;
-                            }
-
-                            switch (pilihan) {
-                                case 1 -> { namaMenu = "Nasi Goreng"; hargaMenu = 20000; }
-                                case 2 -> { namaMenu = "Ayam Goreng"; hargaMenu = 25000; }
-                                case 3 -> { namaMenu = "Mie Goreng"; hargaMenu = 18000; }
-                                case 4 -> { namaMenu = "Bakso"; hargaMenu = 15000; }
-                                case 5 -> { namaMenu = "Soto Ayam"; hargaMenu = 19000; }
-                            }
-                            break;
-
-                        case 2:
-                            System.out.println("\n======== Menu Minuman ========");
-                            System.out.println("| 1. Teh - Rp 5.000          |");
-                            System.out.println("| 2. Kopi - Rp 10.000        |");
-                            System.out.println("| 3. Jus - Rp 15.000         |");
-                            System.out.println("| 4. Susu - Rp 14.000        |");
-                            System.out.println("| 5. Air Mineral - Rp 5.000  |");
-                            System.out.println("==============================");
-                            System.out.print("Pilih minuman (1-5): ");
-                            pilihan = input.nextInt();
-
-                            if (pilihan < 1 || pilihan > 5) {
-                                System.out.println("Menu tidak valid! Pilih antara 1 sampai 5.");
-                                continue;
-                            }
-
-                            switch (pilihan) {
-                                case 1 -> { namaMenu = "Teh"; hargaMenu = 5000; }
-                                case 2 -> { namaMenu = "Kopi"; hargaMenu = 10000; }
-                                case 3 -> { namaMenu = "Jus"; hargaMenu = 15000; }
-                                case 4 -> { namaMenu = "Susu"; hargaMenu = 14000; }
-                                case 5 -> { namaMenu = "Air Mineral"; hargaMenu = 5000; }
-                            }
-                            break;
-                    }
-
                     System.out.print("Masukkan Jumlah Menu \"" + namaMenu + "\": ");
-                    jumlah = input.nextInt();
-
-                    if (jumlah <= 0) {
-                        System.out.println("Jumlah tidak valid! Masukkan angka lebih dari 0.");
-                        continue;
+                    while (true) {
+                        if (input.hasNextInt()) {
+                            jumlah = input.nextInt();
+                            if (jumlah > 0) {
+                                break;
+                            } else {
+                                System.out.println("Jumlah tidak valid! Masukkan angka lebih dari 0.");
+                            }
+                        } else {
+                            System.out.println("Input tidak valid! Masukkan angka.");
+                            input.next();
+                        }
+                        System.out.print("Masukkan Jumlah Menu \"" + namaMenu + "\": ");
                     }
 
                     totalHarga += hargaMenu * jumlah;
@@ -174,5 +192,5 @@ public class IkyCafe {
             System.out.println("Terima kasih Atas Kunjungan Anda Ke IkyCafe");
             System.out.println("");
         }
-    }
+    } 
 }
